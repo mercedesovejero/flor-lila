@@ -1,0 +1,40 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eecda3 0%, #ef629f 100%);
+}
+.hero {
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+.btn-custom {
+    background: #fff;
+    color: #ef629f;
+    border: none;
+}
+.btn-custom:hover {
+    background: #eecda3;
+    color: #ef629f;
+}
+ /* Logo animado violeta */
+        .logo-animado {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            animation: giroLogo 2.5s linear infinite;
+        }
+        @keyframes giroLogo {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.15); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        /* Imagen rostro femenino */
+        .face-img {
+            display: block;
+            margin: 40px auto 0 auto;
+            max-width: 180px;
+            filter: drop-shadow(0 4px 16px rgba(239,98,159,0.25));
+        }

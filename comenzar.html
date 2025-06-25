@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamiento Facial - MiLanding</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MiLanding</a>
+            <div class="ms-auto">
+                <a href="index.html" class="btn btn-custom me-2">Inicio</a>
+                <a href="servicios.html" class="btn btn-custom me-2">Servicios</a>
+                <a href="contacto.html" class="btn btn-custom">Contacto</a>
+            </div>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4">Tratamientos Faciales</h1>
+            <p class="lead">Descubre todos nuestros servicios de estética y cuidado de la piel.</p>
+            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&w=400&h=400&fit=crop" alt="Rostro femenino tratamiento facial" class="img-fluid rounded-circle my-4" style="max-width: 220px; box-shadow: 0 4px 16px rgba(162,89,198,0.15);">
+            <div class="dropdown mb-4">
+                <button class="btn btn-custom dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ver tratamientos disponibles
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Limpieza facial profunda</a></li>
+                    <li><a class="dropdown-item" href="#">Hidratación intensiva</a></li>
+                    <li><a class="dropdown-item" href="#">Rejuvenecimiento con mascarilla</a></li>
+                    <li><a class="dropdown-item" href="#">Peeling químico suave</a></li>
+                    <li><a class="dropdown-item" href="#">Tratamiento antiacné</a></li>
+                    <li><a class="dropdown-item" href="#">Masaje facial relajante</a></li>
+                </ul>
+            </div>
+            <a href="#precios" class="btn btn-custom btn-lg mb-4">Ver precios y descuentos</a>
+            <div id="precios" class="my-4">
+                <h2 class="h4 mb-3">Precios y Descuentos</h2>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item">Limpieza facial profunda: <b>$5000</b></li>
+                    <li class="list-group-item">Hidratación intensiva: <b>$6000</b></li>
+                    <li class="list-group-item">Rejuvenecimiento con mascarilla: <b>$7000</b></li>
+                    <li class="list-group-item">Peeling químico suave: <b>$6500</b></li>
+                    <li class="list-group-item">Tratamiento antiacné: <b>$5500</b></li>
+                    <li class="list-group-item">Masaje facial relajante: <b>$4000</b></li>
+                </ul>
+                <div class="alert alert-success" role="alert">
+                    <b>Descuento:</b> 15% en tu primera sesión. ¡Reserva tu turno!
+                </div>
+            </div>
+            <div class="my-4">
+                <h2 class="h4 mb-3">Solicitar Turno</h2>
+                <p class="mb-2">Selecciona la fecha y el horario, luego haz clic en <b>Solicitar turno</b>. Te aparecerá un mensaje de confirmación y te indicaremos cómo dejar tus datos.</p>
+                <input type="date" class="form-control mb-2" id="fecha-turno" min="2025-06-26">
+                <input type="time" class="form-control mb-2" id="hora-turno">
+                <button class="btn btn-custom" id="btn-turno">Solicitar turno</button>
+                <div id="turno-msg" class="mt-2"></div>
+            </div>
+            <div class="mt-4">
+                <a href="index.html" class="btn btn-outline-light">Volver al inicio</a>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center text-white mt-auto py-4">
+        <div class="container">
+            <small>&copy; 2025 MiLanding. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      document.getElementById('btn-turno').addEventListener('click', function() {
+        const fecha = document.getElementById('fecha-turno').value;
+        const hora = document.getElementById('hora-turno').value;
+        const msg = document.getElementById('turno-msg');
+        if (fecha && hora) {
+          msg.innerHTML = `<span class='text-success'>¡Turno solicitado para el día <b>${fecha}</b> a las <b>${hora}</b>!<br>Por favor, <b>haz clic en Contacto</b> (en el menú superior) para dejar tus datos y que podamos confirmarlo.</span>`;
+        } else {
+          msg.innerHTML = `<span class='text-danger'>Por favor, selecciona una fecha y un horario para tu turno.</span>`;
+        }
+      });
+    </script>
+</body>
+</html>
