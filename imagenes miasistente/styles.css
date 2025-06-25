@@ -1,0 +1,228 @@
+body {
+    min-height: calc(100vh - 60px);
+    margin: 30px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%); /* Sweet Morning */
+}
+
+.navbar {
+    width: 100%;
+    background: rgba(26,35,126,0.95);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    gap: 10px;
+}
+
+.nav-logo-img {
+    height: 36px;
+    width: 36px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    /* Animación */
+    animation: pulse-logo 1.5s infinite alternate;
+}
+
+@keyframes pulse-logo {
+    0% {
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    50% {
+        transform: scale(1.12) rotate(-8deg);
+        box-shadow: 0 4px 16px rgba(252,182,159,0.25);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+    color: #ffb300;
+}
+
+.case-container {
+    max-width: 700px;
+    margin: 60px auto 40px auto;
+    background: #fff;
+    padding: 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+h1 {
+    color: #1a237e;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.case-image {
+    display: block;
+    margin: 0 auto 24px auto;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+
+.case-image:hover {
+    transform: scale(1.06) rotate(-2deg);
+    box-shadow: 0 8px 32px rgba(252,182,159,0.35), 0 2px 8px rgba(0,0,0,0.10);
+    cursor: pointer;
+}
+
+section {
+    margin-bottom: 22px;
+}
+
+h2 {
+    color: #3949ab;
+    margin-bottom: 8px;
+}
+
+.summary p, .methodology p, .results p {
+    color: #333;
+    line-height: 1.6;
+}
+
+.objectives ul {
+    padding-left: 20px;
+    color: #444;
+}
+
+.logo-image {
+    display: block;
+    margin: 0 auto 24px auto;
+    max-width: 120px;
+    height: auto;
+}
+
+.logo-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    color: #fcb69f;
+    margin-bottom: 24px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(255,255,255,0.85);
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-top: 24px;
+}
+
+.formulario label {
+    font-weight: 500;
+    color: #1a237e;
+}
+
+.formulario input, .formulario textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.formulario button {
+    background: #fcb69f;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.formulario button:hover {
+    background: #ffecd2;
+    color: #fcb69f;
+}
+
+@media (max-width: 900px) {
+    .case-container {
+        max-width: 95vw;
+        padding: 18px 6px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 10px;
+    }
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .logo-icon {
+        font-size: 2.5em;
+    }
+    h1, h2 {
+        font-size: 1.2em;
+    }
+    .formulario {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 4px;
+    }
+    .case-container {
+        padding: 8px 2px;
+    }
+    .logo-icon {
+        font-size: 1.5em;
+    }
+    h1, h2 {
+        font-size: 1em;
+    }
+    .formulario input, .formulario textarea {
+        font-size: 0.95em;
+    }
+    .formulario button {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+}
